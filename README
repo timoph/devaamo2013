@@ -1,4 +1,46 @@
 Devaamo 2013 challenge setup
 ----------------------------
 
-TODO
+Prerequirements:
+--------------
+* web server
+* ssh server
+* Qt4 or Qt5 for compilation
+
+Compilation
+-----------
+
+To compile it you need to have Qt SDK installed. Qt4 and Qt5 should both work.
+The actual compilation is just a matter of doing
+
+ qmake && make
+
+on osx use the provided mac-qmake.sh script instead of qmake (we don't want an app bundle)
+
+If you don't intend to install the challenge you can now launch it
+
+ ./bin/hackterminal
+
+Do note that all of the puzzles are not solvable without web pages
+
+Installation
+------------
+
+To install the application do
+
+ sudo make install
+
+other setup
+-----------
+
+You will also need to have a web server installed. Copy the stuff in www/ directory to your
+web server's document root (e.g. /var/www/)
+
+You will also need to create an user used to connect the the challenge
+
+ sudo adduser devaamo --shell=/usr/bin/hackterminal
+
+After giving the user a password the challenge is ready to be used through ssh
+
+ ssh devaamo@<server ip>
+
